@@ -66,9 +66,10 @@ export function DatePickerWithRange({
             defaultMonth={date?.from}
             selected={date}
             onSelect={(values) => {
-              if (!values) return;
-              onUpdate(values);
-              setDate(values);
+              if (values) {
+                onUpdate(values);
+                setDate(values);
+              }
             }}
             numberOfMonths={2}
           />
